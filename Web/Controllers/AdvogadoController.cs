@@ -10,7 +10,7 @@ using Web.ViewModels;
 
 namespace Web.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class AdvogadoController : Controller
     {
         private readonly IAdvogadoRepositorio _advogadoRepository;

@@ -138,7 +138,7 @@ namespace Repository.Implementacao
 
                 try
                 {
-                    using (MySqlCommand cmdAdvogado = new MySqlCommand("INSERT INTO Advogados (Nome, Senioridade) VALUES (@Nome, @Senioridade); SELECT SCOPE_IDENTITY();", conexao, transacao))
+                    using (MySqlCommand cmdAdvogado = new MySqlCommand("INSERT INTO Advogados (Nome, Senioridade) VALUES (@Nome, @Senioridade); SELECT LAST_INSERT_ID();", conexao, transacao))
                     {
                         cmdAdvogado.Parameters.AddWithValue("@Nome", pObjadvogado.Nome);
                         cmdAdvogado.Parameters.AddWithValue("@Senioridade", pObjadvogado.Senioridade);
