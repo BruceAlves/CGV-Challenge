@@ -1,0 +1,26 @@
+-- Crie o banco de dados AdvogadosCGV
+CREATE DATABASE AdvogadosCGV;
+
+-- Use o banco de dados recém-criado
+USE AdvogadosCGV;
+
+-- Crie a tabela Advogados
+CREATE TABLE Advogados
+(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome NVARCHAR(255) NOT NULL,
+    Senioridade INT NOT NULL
+);
+
+-- Crie a tabela Endereco
+CREATE TABLE Endereco (
+    EnderecoId INT AUTO_INCREMENT PRIMARY KEY,
+    Logradouro NVARCHAR(255) NOT NULL,
+    Bairro NVARCHAR(255) NOT NULL,
+    Estado NVARCHAR(50) NOT NULL,
+    Cep NVARCHAR(10) NOT NULL,
+    Numero NVARCHAR(10),
+    Complemento NVARCHAR(255),
+    AdvogadoId INT,
+    FOREIGN KEY (AdvogadoId) REFERENCES Advogados(ID)
+);
